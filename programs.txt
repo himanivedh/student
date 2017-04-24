@@ -1,0 +1,408 @@
+1. Write a Program to check whether given number is Even or Odd?
+
+import java.util.Scanner;
+ 
+class OddOrEven
+{
+   public static void main(String args[])
+   {
+      int x;
+      System.out.println("Enter an integer to check if it is odd or even ");
+      Scanner in = new Scanner(System.in);
+      x = in.nextInt();
+ 
+      if ( x % 2 == 0 )
+         System.out.println("You entered an even number.");
+      else
+         System.out.println("You entered an odd number.");
+   }
+}
+=============================================================================================
+2. Write a Program to check whether a given year is leap or not?
+
+public class LeapYearCalculator
+{
+    public static void main(String args[])
+    {
+ 
+        /*Give the year here which needs to be checked for leap year
+         * (Assuming that year given here  >= 1582 and corresponds to a year in Gregorian calendar)
+         */
+        int year = 2000;
+ 
+        //Flag to store the test result
+        boolean isLeapYear = false;
+ 
+        if(year % 400 == 0)
+        {
+            isLeapYear = true;
+        }
+        else if (year % 100 == 0)
+        {
+            isLeapYear = false;
+        }
+        else if(year % 4 == 0)
+        {
+            isLeapYear = true;
+        }
+        else
+        {
+            isLeapYear = false;
+        }
+ 
+        //Output the test result
+        if(isLeapYear)
+        {
+            System.out.println("Year "+year+" is a Leap Year");
+        }
+        else
+        {
+            System.out.println("Year "+year+" is not a Leap Year");
+        }
+ 
+    }
+}
+===============================================================================================
+3. Write a Program to check the biggest number between three given integers.
+
+import java.util.Scanner;
+ 
+class LargestOfThreeNumbers
+{
+   public static void main(String args[])
+   {
+      int x, y, z;
+      System.out.println("Enter three integers ");
+      Scanner in = new Scanner(System.in);
+ 
+      x = in.nextInt();
+      y = in.nextInt();
+      z = in.nextInt();
+ 
+      if ( x > y && x > z )
+         System.out.println("First number is largest.");
+      else if ( y > x && y > z )
+         System.out.println("Second number is largest.");
+      else if ( z > x && z > y )
+         System.out.println("Third number is largest.");
+      else   
+         System.out.println("Entered numbers are not distinct.");
+   }
+}
+================================================================================================
+4. Write a Program to check a given character is vowel or consonant?
+
+import java.util.Scanner;
+
+public class JavaProgram
+{
+    public static void main(String args[])
+    {
+        char ch;
+        Scanner scan = new Scanner(System.in);
+		
+        System.out.print("Enter an Alphabet : ");
+        ch = scan.next().charAt(0);
+		
+        if(ch=='a' || ch=='A' || ch=='e' || ch=='E' ||
+        ch=='i' || ch=='I' || ch=='o' || ch=='O' ||
+        ch=='u' || ch=='U')
+        {
+            System.out.print("This is a Vowel");
+        }
+        else
+        {
+            System.out.print("This is not a Vowel");
+        }
+    }
+}
+===============================================================================================
+Loop Based Program
+===================
+1. Write a Program to check whether given number is prime or not?
+
+
+import java.util.Scanner;
+
+public class JavaProgram
+{
+    public static void main(String args[])
+    {
+        int num, i, count=0;
+        Scanner scan = new Scanner(System.in);
+		
+        System.out.print("Enter a Number : ");
+        num = scan.nextInt();
+		
+        for(i=2; i<num; i++)
+        {
+            if(num%i == 0)
+            {
+                count++;
+                break;
+            }
+        }
+        if(count == 0)
+        {
+            System.out.print("This is a Prime Number");
+        }
+        else
+        {
+            System.out.print("This is not a Prime Number");
+        }
+    }
+}
+==============================================================================
+2. Write a Program to check whether given number is perfect number?
+
+import java.util.Scanner;
+public class Perfect
+{
+    public static void main(String[] args) 
+    {
+        int n, sum = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter any integer you want to check:");
+        n = s.nextInt();
+        for(int i = 1; i < n; i++)
+        {
+            if(n % i == 0)
+            {
+                sum = sum + i;
+            }
+        }
+        if(sum == n)
+        {
+            System.out.println("Given number is Perfect");
+        }
+        else
+        {
+            System.out.println("Given number is not Perfect");
+        }    
+    }
+    int divisor(int x)
+    {
+       return x;
+    }
+}
+=================================================================================
+3. Write a Program to display all even numbers from 1 to 50.
+
+public class EvenNumbers {
+ 
+        public static void main(String[] args) {
+               
+                //define limit
+                int limit = 50;
+               
+                System.out.println("Printing Even numbers between 1 and " + limit);
+               
+                for(int i=1; i <= limit; i++){
+                       
+                        // if the number is divisible by 2 then it is even
+                        if( i % 2 == 0){
+                                System.out.print(i + " ");
+                        }
+                }
+        }
+}
+=========================================================================================
+4. Write a Program to display all prime number from 1 to 100.
+
+class PrimeNumbers
+{
+   public static void main (String[] args)
+   {		
+       int i =0;
+       int num =0;
+     
+       String  primeNumbers = "";
+
+       for (i = 1; i <= 100; i++)         
+       { 		  	  
+          int counter=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		counter = counter + 1;
+	     }
+	  }
+	  if (counter ==2)
+	  {
+	     
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 1 to 100 are :");
+       System.out.println(primeNumbers);
+   }
+}
+===================================================================================================
+5. Write a Program to display the sum of digits of a given number.
+
+import java.util.Scanner;
+class Sumofdigit
+{
+public static void main(String[] args) 
+{
+int a,no,sum=0;
+Scanner s=new Scanner(System.in);
+System.out.println("Enter any number: ");
+no=s.nextInt();
+while(no>0)
+{
+a=no%10;
+no=no/10;
+sum=sum+a;
+}
+System.out.println("Sum of Digits :"+sum);
+}
+}
+=======================================================================================
+6. Write a Program to display whether a given number is palindrome?
+
+class PalindromeExample{  
+ public static void main(String args[]){  
+  int r,sum=0,temp;    
+  int n=454;//It is the number variable to be checked for palindrome  
+  
+  temp=n;    
+  while(n>0){    
+   r=n%10;  //getting remainder  
+   sum=(sum*10)+r;    
+   n=n/10;    
+  }    
+  if(temp==sum)    
+   System.out.println("palindrome number ");    
+  else    
+   System.out.println("not palindrome");    
+}  
+}  
+ =====and=====
+import java.util.*;
+ 
+class Palindrome
+{
+   public static void main(String args[])
+   {
+      String original, reverse = "";
+      Scanner in = new Scanner(System.in);
+ 
+      System.out.println("Enter a string to check if it is a palindrome");
+      original = in.nextLine();
+ 
+      int length = original.length();
+ 
+      for ( int i = length - 1; i >= 0; i-- )
+         reverse = reverse + original.charAt(i);
+ 
+      if (original.equals(reverse))
+         System.out.println("Entered string is a palindrome.");
+      else
+         System.out.println("Entered string is not a palindrome.");
+ 
+   }
+}	
+=============================================================================================
+7. Write a Program to check whether a given number is armstrong or not?
+
+class ArmstrongExample{  
+  public static void main(String[] args)  {  
+    int c=0,a,temp;  
+    int n=153;//It is the number to check armstrong  
+    temp=n;  
+    while(n>0)  
+    {  
+    a=n%10;  
+    n=n/10;  
+    c=c+(a*a*a);  
+    }  
+    if(temp==c)  
+    System.out.println("armstrong number");   
+    else  
+        System.out.println("Not armstrong number");   
+   }  
+}  
+==============================================================================================
+8. Write a Program to display all the perfect numbers from 1 to 100.
+
+class perfect{
+        public static void main(String ar[])          {
+
+                   int i,sum=1;                  
+                   System.out.print("Perfect nos from 1 to 60 are 1,");
+                   for(int j=2;j<=60;j++)
+
+                   {
+
+  sum=1;
+                       for(i=2;i<j;i++)
+                       {   
+                       if(j%i==0)
+                             sum=sum+i;
+                       }
+
+                   if(j==sum)
+                             System.out.print(j+",");
+                   }
+          }
+}
+=========================================================================
+9. Write a Program to display all the armstrong number from 100 to 500?
+
+public class Armstrong
+{
+    public static void main(String[] args) 
+     {
+        int n, count = 0, a, b, c, sum = 0;
+        System.out.print("Armstrong numbers from 100 to 500:");
+        for(int i = 100; i <= 500; i++)
+        {
+            n = i;
+            while(n > 0)
+            {
+                b = n % 10;
+                sum = sum + (b * b * b);
+                n = n / 10;
+            }
+            if(sum == i)
+            {
+                System.out.print(i+" ");
+            }
+            sum = 0;
+        }
+    }
+}
+===========================================================================
+10.Write a Program to display the maximum and minimum number from a given 10 numbers
+
+import java.io.*;
+class max_min
+{
+    public static void main()throws IOException
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter any number or '0' to exit\n\n");
+        int n=0,i=9;
+        System.out.print("Enter a number : ");
+        n=Integer.parseInt(br.readLine());
+        System.out.print("\n");
+        int max=n,min=n;
+        do
+        {
+            if(n>max)
+            max=n;   
+            if(n<min)
+            min=n;
+            System.out.print("Enter a number : ");
+            n=Integer.parseInt(br.readLine());
+            System.out.print("\n");
+            if(n==0)
+            i=n;
+        }while(i!=0);
+        System.out.print("The maximum number is : "+max+"\n");
+        System.out.println("\nThe minimum number is : "+min);
+    }
+}
+=================*****************************===============================
